@@ -1,0 +1,49 @@
+name:                advent2020
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/skeet70/advent2020#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Murph Murphy
+maintainer:          murph@clurictec.com
+copyright:           Murph Murphy
+category:            toy
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  ghc-options:         -Wall
+  exposed-modules:     Lib
+  other-modules:       Lib.Prelude
+  build-depends:       base >= 4.7 && < 5
+                     , universum >= 1.7.0 && < 2.0.0
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings, NoImplicitPrelude
+
+executable advent2020-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , advent2020
+                     , universum >= 1.7.0 && < 2.0.0
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings, NoImplicitPrelude
+
+test-suite advent2020-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       base
+                     , advent2020
+                     , universum >= 1.7.0 && < 2.0.0
+  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings, NoImplicitPrelude
+
+source-repository head
+  type:     git
+  location: https://github.com/skeet70/advent2020
