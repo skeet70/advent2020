@@ -39,6 +39,7 @@ test-suite advent2020-test
   main-is:             Spec.hs
   build-depends:       base
                      , advent2020
+                     , hspec
                      , universum >= 1.7.0 && < 2.0.0
   ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
